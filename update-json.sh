@@ -43,15 +43,16 @@ echo
 
 echo "Downloading browser_protocol.json from Chromium ${CHROMIUM_STABLE}..."
 echo
-curl "${CHROMIUM_BRANCH}/third_party/WebKit/Source/core/inspector/browser_protocol.json?format=TEXT" \
-  | base64 --decode >json/browser_protocol.json
+echo "${CHROMIUM_BRANCH}/third_party/WebKit/Source/core/inspector/browser_protocol.json?format=TEXT"
+curl "https://raw.githubusercontent.com/ChromeDevTools/devtools-protocol/master/json/browser_protocol.json" \
+  >json/browser_protocol.json
 echo
 echo
 
 echo "Downloading js_protocol.json from v8 revision ${V8_REVISION}..."
 echo
-curl "${V8_BRANCH}/src/inspector/js_protocol.json?format=TEXT" \
-  | base64 --decode >json/js_protocol.json
+curl "https://raw.githubusercontent.com/ChromeDevTools/devtools-protocol/master/json/js_protocol.json" \
+  >json/js_protocol.json
 echo
 echo
 
